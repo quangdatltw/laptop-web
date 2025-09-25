@@ -9,10 +9,8 @@ import org.springframework.context.ApplicationContext;
 public class WebApplication {
 
     public static void main(String[] args) {
-        ApplicationContext web = SpringApplication.run(WebApplication.class, args);
-        for (String beanName : web.getBeanDefinitionNames()) {
-            System.out.println("Bean: " + beanName);
-        }
+        SpringApplication.run(WebApplication.class, args);
+
     }
 
 }
