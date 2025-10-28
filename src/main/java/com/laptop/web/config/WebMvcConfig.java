@@ -26,4 +26,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.viewResolver(viewResolver());
     }
+
+    @Override
+    public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
+    }
 }
