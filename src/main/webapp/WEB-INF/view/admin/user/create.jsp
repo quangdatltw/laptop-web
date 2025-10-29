@@ -2,6 +2,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html lang="en">
 <head>
@@ -21,32 +22,34 @@
         <div class="row" >
             <div class="col-md-6 col-12 mx-auto">
                 <h2>Create User</h2>
-                <form>
+                <form:form method="post"
+                           action="/admin/user/create"
+                           modelAttribute="newUser">
                     <br>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="form-control" required>
+                        <form:input type="text" class="form-control" id="email" name="form-control" path="email"/>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="form-control" required>
+                        <form:input type="password" class="form-control" id="password" name="form-control"  path="password"/>
                     </div>
                     <div class="mb-3">
                         <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" name="form-control" required>
+                        <form:input type="text" class="form-control" id="phone" name="form-control" path="phone"/>
                     </div>
                     <div class="mb-3">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" name="form-control" required>
+                        <form:input type="text" class="form-control" id="fullName" name="form-control" path="fullName"/>
                     </div>
 
                     <div class="mb-3">
                         <label for="address" class="form-label">Address</label>
-                        <input type="email" class="form-control" id="address" name="form-control" required>
+                        <form:input type="text" class="form-control" id="address" name="form-control" path="address"/>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Create User</button>
-                </form>
+                </form:form>
             </div>
         </div>
 
