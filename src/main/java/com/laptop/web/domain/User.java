@@ -1,7 +1,17 @@
 package com.laptop.web.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+
     private String email;
     private String password;
     private String fullName;
@@ -55,11 +65,11 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
+                ", email='" + email  +
+                ", password='" + password  +
+                ", fullName='" + fullName  +
+                ", phone='" + phone  +
+                ", address='" + address  +
                 '}';
     }
 }
